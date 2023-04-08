@@ -8,9 +8,9 @@ Japan PaaS Support Team Blog 様より許可をいただき、テンプレート
 投稿は `_posts` ディレクトリに `.html` もしくは `.md` 形式のファイルを配置し、`main` ブランチへプッシュを行う。投稿を行うファイルのサンプルは下記を参照。
 
 Title: - <br>
-URL: https://raw.githubusercontent.com/Toxumuharu/toxumuharu.github.io/main/_posts/2022-03-19-about-toxumuharu.md <br>
+URL: https://raw.githubusercontent.com/Toxumuharu/DevBlog/main/_posts/2022-03-19-about-toxumuharu.md <br>
 
 上記のファイルにより表示されるページが下記。
 
 Title: Toxumuharu と本ブログについて <br>
-URL: https://toxumuharu.github.io/2022/03/19/about-toxumuharu.html
+URL: https://toxumuharu.github.io/DevBlog/2022/03/19/about-toxumuharu.html
