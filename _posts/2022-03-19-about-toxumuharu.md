@@ -21,15 +21,6 @@ tags:
 <br>
 <br>
 
-<!-- ![2022-03-19-about-toxumuharu](/media/2022/03/2022-03-19-about-toxumuharu.jpg) -->
-
-<div align="center">
-<img src="/media/2022/03/2022-03-19-about-toxumuharu.jpg" width="75%">
-</div>
-
-<br>
-<br>
-
 ---
 
 <br>

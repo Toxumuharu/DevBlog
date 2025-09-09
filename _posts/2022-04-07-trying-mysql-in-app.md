@@ -13,7 +13,7 @@ Azure App Service の MySQL In App をデータベースとして使用する事
 
 MySQL in App Test Web App - [https://toxumuharumysqlinapptestwebapp.azurewebsites.net/](https://toxumuharumysqlinapptestwebapp.azurewebsites.net/)
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/16.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/16.png)
 
 # MySQL In App とは
 MySQL In App とは、Windows ベースの環境へ Web アプリケーションをデプロイする場合に、アプリケーションのデータベースとして MySQL が追加料金なしで使える App Service の機能です。
@@ -53,38 +53,38 @@ URL: [https://azure.github.io/AppService/2016/08/18/Announcing-MySQL-in-app-for-
 ## 1. App Service で Windows 環境の Web App を作成する。
 Azure Portal より Web App を作成します。Operating System を忘れず「Windows」に設定します。
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/1.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/1.png)
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/2.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/2.png)
 
 Web App がデフォルトの状態でデプロイされますので、一度開いておきましょう。[こちら](https://toxumuharu.github.io/2022/03/23/2002-error-of-mysql-in-app-on-appservice.html)で公開しているエラーを回避することにも繋がります。
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/3.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/3.png)
 
 Web App がデプロイされたデフォルトの状態です。
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/4.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/4.png)
 
 
 ## 2. データベースを作成する
 何回アクセスされたかを記録するため、データベースを作成します。
 作成した Web App の項目「Settings」より、「MySQL in App」を選択します。
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/5.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/5.png)
 
 項目「MySQL in App」を「ON」に設定し、「Save」を押下し保存します。
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/6.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/6.png)
 
 「↗︎Manage」が押下できるようになります。押下してデータベースを編集します。
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/7.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/7.png)
 
 私のようなデータベースを作成したことの無い人間は初めて見る画面が立ち上がります。
   
 検索してみると、データベース界隈、Web 開発界隈ではよくある画面なのか「見慣れた画面」「よく見る画面」「ここから先の操作はご存じだと思いますので割愛します」など出てきました。存じませんので割愛していただきたく無いです。
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/8.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/8.png)
 
 それではデータベースを作成しましょう。
   
@@ -95,7 +95,7 @@ Web App がデプロイされたデフォルトの状態です。
 
 データベース名、Collation を設定した後「Create」を押下し、データベースを作成します。
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/9.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/9.png)
 
 データベースが作成されると、続いてテーブルを作成する画面になります。Name と Number of columns を設定します。今回は次の内容で作成します。
 - Name: access
@@ -104,7 +104,7 @@ Web App がデプロイされたデフォルトの状態です。
         - データの通し番号
         - アクセス時のタイム スタンプ
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/10.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/10.png)
 
 テーブルが作成されると、続いてテーブルの列の詳細を設定する画面になります。先ほど設定した 2 つの列に対して、それぞれ設定を行います。
 1. `code` - Type: INT、Index: Primary (自動で設定されます)、A_I: ON (チェックを入れる)
@@ -112,11 +112,11 @@ Web App がデプロイされたデフォルトの状態です。
 2. `timestamp` - Type: TIMESTAMP
     - アプリケーションの要件からするとこの列はもはや必要ないが、アクセスされた日時を念の為保存するための列。アクセスされた日時のため TIMESTAMP 型として設定します。
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/11.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/11.png)
 
 `code` の A_I (恐らく AUTO_INCREMENT) にチェックを入れると以下のようなダイアログが表示されましたが、そのまま「Go」を押下します。
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/12.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/12.png)
 
 上記を設定し、「Save」を押下すると今回使用するためのデータベースの設定が終了します。
 
@@ -209,22 +209,22 @@ Web App がデプロイされたデフォルトの状態です。
 
 `MYSQLCONNSTR_localdb` と言う文字列は MySQL in App の環境変数として MySQL in App のページにて指定されています。
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/13.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/13.png)
 
 ## 4. デプロイする
 上記の `index.php` を作成した Web App へデプロイして下さい。(ソース管理やエディタの選別、Web App へのデプロイ方法等は開発者の皆様それぞれ好みがあると思いますので、この表現になりました。)
 
 Web App へのデプロイは Deployment Center より、GitHub や Azure Repos 等選択可能です。
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/14.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/14.png)
 
 参考までに、私は Azure Repos を用いてデプロイしました。
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/15.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/15.png)
 
 それでは Web App へアクセスしてみましょう。下記のようなページとなれば成功です。
 
-![2022-04-07-trying-mysql-in-app](/media/20220407/16.png)
+![2022-04-07-trying-mysql-in-app](/DevBlog/media/20220407/16.png)
 
 # 参考文献
 - Announcing Azure App Service MySQL in-app (preview) - [https://azure.microsoft.com/ja-jp/blog/mysql-in-app-preview-app-service/](https://azure.microsoft.com/ja-jp/blog/mysql-in-app-preview-app-service/)

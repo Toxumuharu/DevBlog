@@ -41,7 +41,7 @@ alias gitauto=gitauto
 
 <br>
 
-![2022-07-16-tips-git-alias-for-lazy-people](/media/20220716/1.png)
+![2022-07-16-tips-git-alias-for-lazy-people](/DevBlog/media/20220716/1.png)
 
 <br>
 

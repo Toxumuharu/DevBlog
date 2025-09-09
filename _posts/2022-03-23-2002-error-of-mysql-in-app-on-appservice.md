@@ -15,7 +15,7 @@ mysqli_real_connect(): (HY000/2002): An attempt was made to access a socket in a
 
 <br>
 
-![2022-03-23-2002-error-of-mysql-in-app-on-appservice](/media/20220319/1.png)
+![2022-03-23-2002-error-of-mysql-in-app-on-appservice](/DevBlog/media/20220319/1.png)
 
 <br>
 
@@ -25,8 +25,8 @@ App Service の プランを Premium にスケールアップし、Always On を
 
 <br>
 
-![2022-03-23-2002-error-of-mysql-in-app-on-appservice](/media/20220319/2.png)
-![2022-03-23-2002-error-of-mysql-in-app-on-appservice](/media/20220319/3.png)
+![2022-03-23-2002-error-of-mysql-in-app-on-appservice](/DevBlog/media/20220319/2.png)
+![2022-03-23-2002-error-of-mysql-in-app-on-appservice](/DevBlog/media/20220319/3.png)
 
 <br>
 
